@@ -43,7 +43,7 @@ To generate this readme: `node readme.js`
 
 Start up the Kubernetes cluster with Minikube, giving it some extra resources.
 
-`minikube start --memory 8000 --cpus 2 --kubernetes-version v1.11.0`
+`minikube start --memory 4000 --cpus 2 --kubernetes-version v1.11.0`
 
 #### Step2
 
@@ -56,6 +56,7 @@ Enable the Minikube add-ons Heapster and Ingress.
 View the Minikube Dashboard, a web UI for managing deployments.
 
 `minikube service kubernetes-dashboard --namespace kube-system`
+#### please run command `minikube dashboard --url` and see minikube dashboard url
 
 #### Step4
 
@@ -66,7 +67,7 @@ Deploy the public nginx image from DockerHub into a pod. Nginx is an open source
 #### Step5
 
 Create a K8s Service for the deployment. This will expose the nginx pod so you can access it with a web browser.
-
+-
 `kubectl expose deployment nginx --type NodePort --port 80`
 
 #### Step6
